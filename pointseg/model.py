@@ -2,8 +2,6 @@ import torch
 from torch import nn
 from torchvision.models import resnet18
 
-# download.pytorch.org is unreachable from this environment, the legacy S3
-# bucket serves the same torchvision ImageNet checkpoint.
 IMAGENET_URL = "https://s3.amazonaws.com/pytorch/models/resnet18-5c106cde.pth"
 
 

@@ -7,7 +7,6 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 GRID = [
-    # name, points per class, gamma, seed
     ("dense_ce", 0, 0.0, 0),
     ("points1_ce", 1, 0.0, 0),
     ("points5_ce", 5, 0.0, 0),
