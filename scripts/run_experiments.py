@@ -36,7 +36,11 @@ def launch(job, args):
         "--seed", str(seed),
         "--epochs", str(args.epochs),
         "--threads", str(args.threads),
+        "--batch-size", str(args.batch_size),
+        "--device", args.device,
     ]
+    if args.save_checkpoints:
+        cmd.append("--save-checkpoint")
     log = Path(args.runs) / f"{name}.log"
     print(f"start {name}", flush=True)
     with open(log, "w") as handle:
@@ -51,6 +55,9 @@ def main():
     parser.add_argument("--epochs", type=int, default=12)
     parser.add_argument("--threads", type=int, default=2)
     parser.add_argument("--workers", type=int, default=2)
+    parser.add_argument("--batch-size", type=int, default=8)
+    parser.add_argument("--device", default="cpu")
+    parser.add_argument("--save-checkpoints", action="store_true")
     args = parser.parse_args()
 
     Path(args.runs).mkdir(parents=True, exist_ok=True)
