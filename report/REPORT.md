@@ -214,6 +214,31 @@ points — cannot be distinguished from noise with one run per configuration.
 
 ![training curves](figures/training_curves.png)
 
+The curves show where that instability comes from. The dense run rises smoothly and settles
+after six epochs; the point runs oscillate, and the fewer the points the wider the swings —
+the single-point run loses 0.06 mIoU between two consecutive epochs. With a small labelled
+set, each batch is a very different sample of the annotation, so the gradient direction
+changes more from step to step.
+
+### 3.6 What the gap actually looks like
+
+![qualitative](figures/qualitative.png)
+
+*Test tiles, ground truth, 5 points per class, full masks. Both models were retrained with
+checkpointing and reproduced their grid scores exactly (0.5340 and 0.5902 building IoU).*
+
+The remaining 0.056 IoU is not a detection gap. Both models find the same structures,
+including the isolated roofs in the second row and the dense informal settlement in the
+third. What separates them is precision at the edges: the point-supervised model merges
+adjacent houses into single blobs where the dense model still resolves the gaps between
+them, and its outlines are rounder than the rectangular footprints in the labels.
+
+That is the expected failure mode. A point label says "this pixel is a roof", never "the
+roof stops here", so nothing in the objective pushes the decoder to sharpen a boundary.
+Both models also flatten the rows of terraced houses in the last row into continuous
+strips, so part of the error is a resolution limit shared with full supervision rather
+than a cost of point annotation.
+
 ## 4. Discussion
 
 **What worked.** Partial CE does exactly what it is supposed to: it lets a standard
@@ -233,8 +258,10 @@ without any explicit regularisation.
   problem with spectrally similar classes would be harder and might change the shape of the
   label-efficiency curve.
 * 12 epochs on CPU, roughly 27 minutes per run, ten runs. The models are not trained to
-  convergence — the dense baseline was still improving slowly when it stopped, so the gap
-  between point and full supervision may be understated.
+  convergence, and the training curves show this asymmetrically: the dense baseline is flat
+  from epoch 6 onwards while every point-supervised run is still improving at epoch 11.
+  The gap reported here is therefore an upper bound on the true cost of point supervision,
+  and a longer schedule would likely narrow it.
 * One seed per configuration except at 5 points, which is why section 3.5 exists rather
   than significance tests.
 * The simulated annotator is perfect: points are always on the correct class. Real clicks
