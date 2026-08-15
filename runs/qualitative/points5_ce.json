@@ -1,0 +1,145 @@
+{
+  "config": {
+    "data": "data/rio",
+    "out": "runs/qualitative/points5_ce.json",
+    "points": 5,
+    "point_mode": "balanced",
+    "gamma": 0.0,
+    "epochs": 12,
+    "batch_size": 8,
+    "lr": 0.0003,
+    "seed": 0,
+    "split_seed": 0,
+    "threads": 2,
+    "device": "cpu",
+    "no_pretrain": false,
+    "save_checkpoint": true
+  },
+  "labelled_pixels": 6300,
+  "labelled_fraction": 0.000152587890625,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 0.5204157611498466,
+      "miou": 0.522211015909599,
+      "iou_background": 0.7130726063983608,
+      "iou_building": 0.33134942542083706,
+      "f1_building": 0.497764777742099,
+      "overall_accuracy": 0.7487911648220487
+    },
+    {
+      "epoch": 1,
+      "loss": 0.40980946979461574,
+      "miou": 0.6272325399304395,
+      "iou_background": 0.8099202999076852,
+      "iou_building": 0.4445447799531937,
+      "f1_building": 0.6154807883042543,
+      "overall_accuracy": 0.8350182427300348
+    },
+    {
+      "epoch": 2,
+      "loss": 0.36575601593806195,
+      "miou": 0.6425062415428675,
+      "iou_background": 0.8196142353332124,
+      "iou_building": 0.46539824775252264,
+      "f1_building": 0.6351833004663445,
+      "overall_accuracy": 0.8440965440538194
+    },
+    {
+      "epoch": 3,
+      "loss": 0.34108607451885176,
+      "miou": 0.6288570289512658,
+      "iou_background": 0.8038268863499649,
+      "iou_building": 0.4538871715525668,
+      "f1_building": 0.6243774351043664,
+      "overall_accuracy": 0.8313278763382523
+    },
+    {
+      "epoch": 4,
+      "loss": 0.3274734035516397,
+      "miou": 0.559196811364926,
+      "iou_background": 0.727684806656534,
+      "iou_building": 0.39070881607331803,
+      "f1_building": 0.5618844312449083,
+      "overall_accuracy": 0.7681679054542824
+    },
+    {
+      "epoch": 5,
+      "loss": 0.3157692477107048,
+      "miou": 0.6597502735997274,
+      "iou_background": 0.8381708549559929,
+      "iou_building": 0.4813296922434619,
+      "f1_building": 0.6498616678836593,
+      "overall_accuracy": 0.8593008535879629
+    },
+    {
+      "epoch": 6,
+      "loss": 0.29854642026699507,
+      "miou": 0.6602703275021564,
+      "iou_background": 0.8437012695548062,
+      "iou_building": 0.47683938544950655,
+      "f1_building": 0.6457565936384756,
+      "overall_accuracy": 0.8631910536024305
+    },
+    {
+      "epoch": 7,
+      "loss": 0.2847706075662222,
+      "miou": 0.6409770359674631,
+      "iou_background": 0.8120040377853367,
+      "iou_building": 0.4699500341495897,
+      "f1_building": 0.6394095353335869,
+      "overall_accuracy": 0.8388624403211805
+    },
+    {
+      "epoch": 8,
+      "loss": 0.27922942241032916,
+      "miou": 0.6527499834415524,
+      "iou_background": 0.8268995445572827,
+      "iou_building": 0.4786004223258222,
+      "f1_building": 0.6473695193093331,
+      "overall_accuracy": 0.8506327311197917
+    },
+    {
+      "epoch": 9,
+      "loss": 0.2636493901029611,
+      "miou": 0.673269259363285,
+      "iou_background": 0.8451005095367662,
+      "iou_building": 0.5014380091898037,
+      "f1_building": 0.6679436728265411,
+      "overall_accuracy": 0.8659799081307871
+    },
+    {
+      "epoch": 10,
+      "loss": 0.2592701195524289,
+      "miou": 0.6640646171574222,
+      "iou_background": 0.8375976538503966,
+      "iou_building": 0.49053158046444767,
+      "f1_building": 0.6581968297667316,
+      "overall_accuracy": 0.8595579924406829
+    },
+    {
+      "epoch": 11,
+      "loss": 0.24684101324050856,
+      "miou": 0.6635748182139907,
+      "iou_background": 0.8377811292604287,
+      "iou_building": 0.4893685071675526,
+      "f1_building": 0.6571489927609958,
+      "overall_accuracy": 0.8596071596498842
+    }
+  ],
+  "val": {
+    "miou": 0.673269259363285,
+    "iou_background": 0.8451005095367662,
+    "iou_building": 0.5014380091898037,
+    "f1_building": 0.6679436728265411,
+    "overall_accuracy": 0.8659799081307871
+  },
+  "test": {
+    "miou": 0.6819455749564929,
+    "iou_background": 0.829888027271616,
+    "iou_building": 0.5340031226413698,
+    "f1_building": 0.6962216891995374,
+    "overall_accuracy": 0.8576394540292246
+  },
+  "minutes": 27.600429264704385
+}

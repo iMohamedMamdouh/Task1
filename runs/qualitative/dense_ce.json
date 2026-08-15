@@ -1,0 +1,145 @@
+{
+  "config": {
+    "data": "data/rio",
+    "out": "runs/qualitative/dense_ce.json",
+    "points": 0,
+    "point_mode": "balanced",
+    "gamma": 0.0,
+    "epochs": 12,
+    "batch_size": 8,
+    "lr": 0.0003,
+    "seed": 0,
+    "split_seed": 0,
+    "threads": 2,
+    "device": "cpu",
+    "no_pretrain": false,
+    "save_checkpoint": true
+  },
+  "labelled_pixels": 41287680,
+  "labelled_fraction": 1.0,
+  "history": [
+    {
+      "epoch": 0,
+      "loss": 0.3686586551559277,
+      "miou": 0.6939443207249529,
+      "iou_background": 0.8808245450087201,
+      "iou_building": 0.5070640964411859,
+      "f1_building": 0.6729164308785248,
+      "overall_accuracy": 0.893838953088831
+    },
+    {
+      "epoch": 1,
+      "loss": 0.2613287669343826,
+      "miou": 0.629171044130812,
+      "iou_background": 0.87957889490426,
+      "iou_building": 0.378763193357364,
+      "f1_building": 0.5494245787560587,
+      "overall_accuracy": 0.8878154613353588
+    },
+    {
+      "epoch": 2,
+      "loss": 0.24633931578733984,
+      "miou": 0.6996891878374769,
+      "iou_background": 0.8904911173145758,
+      "iou_building": 0.5088872583603782,
+      "f1_building": 0.6745199225995943,
+      "overall_accuracy": 0.9016510009765625
+    },
+    {
+      "epoch": 3,
+      "loss": 0.2316592670021913,
+      "miou": 0.7032876721907186,
+      "iou_background": 0.8897914074121245,
+      "iou_building": 0.5167839369693129,
+      "f1_building": 0.6814206352974692,
+      "overall_accuracy": 0.9014114945023148
+    },
+    {
+      "epoch": 4,
+      "loss": 0.22360966125359902,
+      "miou": 0.7191764992433762,
+      "iou_background": 0.8945110725111837,
+      "iou_building": 0.5438419259755688,
+      "f1_building": 0.7045305828599127,
+      "overall_accuracy": 0.9062958893952546
+    },
+    {
+      "epoch": 5,
+      "loss": 0.22060927166006503,
+      "miou": 0.7205488051769522,
+      "iou_background": 0.8955230525661552,
+      "iou_building": 0.5455745577877492,
+      "f1_building": 0.7059828398943817,
+      "overall_accuracy": 0.907167335792824
+    },
+    {
+      "epoch": 6,
+      "loss": 0.21488318534997794,
+      "miou": 0.7272358821890257,
+      "iou_background": 0.8933821192111668,
+      "iou_building": 0.5610896451668845,
+      "f1_building": 0.7188435935168894,
+      "overall_accuracy": 0.9061707673249422
+    },
+    {
+      "epoch": 7,
+      "loss": 0.20957285242202955,
+      "miou": 0.7213781327663027,
+      "iou_background": 0.8986670359455209,
+      "iou_building": 0.5440892295870846,
+      "f1_building": 0.7047380671550739,
+      "overall_accuracy": 0.9095993607132523
+    },
+    {
+      "epoch": 8,
+      "loss": 0.2082641102755681,
+      "miou": 0.7233289607708377,
+      "iou_background": 0.8996142044541504,
+      "iou_building": 0.5470437170875251,
+      "f1_building": 0.7072117110140795,
+      "overall_accuracy": 0.9104687726056134
+    },
+    {
+      "epoch": 9,
+      "loss": 0.20473656956201944,
+      "miou": 0.7284834577124863,
+      "iou_background": 0.9003072579516984,
+      "iou_building": 0.5566596574732744,
+      "f1_building": 0.7151976410525451,
+      "overall_accuracy": 0.9113979763454861
+    },
+    {
+      "epoch": 10,
+      "loss": 0.2025112618620579,
+      "miou": 0.7238585484861052,
+      "iou_background": 0.9006275846056816,
+      "iou_building": 0.5470895123665288,
+      "f1_building": 0.7072499787419089,
+      "overall_accuracy": 0.9112774884259259
+    },
+    {
+      "epoch": 11,
+      "loss": 0.2025522849498651,
+      "miou": 0.7248267025306658,
+      "iou_background": 0.9006616668429844,
+      "iou_building": 0.5489917382183473,
+      "f1_building": 0.708837529178559,
+      "overall_accuracy": 0.911377857349537
+    }
+  ],
+  "val": {
+    "miou": 0.7284834577124863,
+    "iou_background": 0.9003072579516984,
+    "iou_building": 0.5566596574732744,
+    "f1_building": 0.7151976410525451,
+    "overall_accuracy": 0.9113979763454861
+  },
+  "test": {
+    "miou": 0.7391312640493077,
+    "iou_background": 0.8880991531408543,
+    "iou_building": 0.5901633749577612,
+    "f1_building": 0.7422675987282594,
+    "overall_accuracy": 0.9036282009548611
+  },
+  "minutes": 27.73047573963801
+}
