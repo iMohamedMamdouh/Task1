@@ -1,3 +1,0 @@
-train tiles 630  labelled pixels 1260/41287680 (0.0031%)
-epoch 00  loss 0.5761  val mIoU 0.4872  building IoU 0.3245  [138s]
-epoch 01  loss 0.4875  val mIoU 0.5317  building IoU 0.3459  [277s]
