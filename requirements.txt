@@ -1,0 +1,7 @@
+torch>=2.5
+torchvision>=0.20
+numpy
+pillow
+matplotlib
+rasterio
+requests
