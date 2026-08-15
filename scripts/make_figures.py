@@ -10,7 +10,7 @@ from PIL import Image
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-from pointseg.data import IGNORE_INDEX, RioBuildings, sample_points, split_tiles
+from pointseg.data import RioBuildings, sample_points, split_tiles
 from pointseg.model import UNetResNet18
 
 
@@ -144,6 +144,22 @@ def results_table(results, out):
                               for k in header))
     (out / "results.csv").write_text("\n".join(lines) + "\n")
     print("\n".join(lines))
+
+    columns = ["run", "points", "gamma", "labelled_fraction", "test_miou",
+               "test_iou_building", "test_f1_building", "test_oa"]
+    table = ["| " + " | ".join(columns) + " |", "|" + "---|" * len(columns)]
+    for row in rows:
+        cells = []
+        for key in columns:
+            value = row[key]
+            if key == "labelled_fraction":
+                cells.append(f"{100 * value:.4f}%")
+            elif isinstance(value, float):
+                cells.append(f"{value:.4f}")
+            else:
+                cells.append(str(value))
+        table.append("| " + " | ".join(cells) + " |")
+    (out / "results.md").write_text("\n".join(table) + "\n")
 
 
 def main():

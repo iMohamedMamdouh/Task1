@@ -36,7 +36,7 @@ and resizes to 256x256, and keeps tiles with at least 1% building cover.
 
 ```bash
 pip install -r requirements.txt
-python scripts/download_spacenet.py --num-tiles 900
+python -m scripts.download_spacenet --num-tiles 900
 ```
 
 ## Training
@@ -54,8 +54,8 @@ test always use the complete masks.
 ## Experiments
 
 ```bash
-python scripts/run_experiments.py --epochs 12
-python scripts/make_figures.py
+python -m scripts.run_experiments --epochs 12
+python -m scripts.make_figures
 ```
 
 Results and the discussion are in [report/REPORT.md](report/REPORT.md).
