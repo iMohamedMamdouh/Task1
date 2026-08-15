@@ -28,8 +28,14 @@ def label_efficiency(results, out):
              if f"points{n}_focal2" in results]
     dense = results["dense_ce"]["test"]["iou_building"]
 
+    seeds = [results[name]["test"]["iou_building"] for name in
+             ["points5_ce", "points5_ce_seed1", "points5_ce_seed2"] if name in results]
+
     fig, ax = plt.subplots(figsize=(6, 4))
     ax.axhline(dense, color="grey", ls="--", label=f"full masks ({dense:.3f})")
+    if len(seeds) > 1:
+        ax.vlines(5, min(seeds), max(seeds), color="tab:blue", alpha=0.35, lw=6,
+                  label=f"seed spread at 5 points ({max(seeds) - min(seeds):.3f})")
     ax.plot(density, ce, "o-", label="partial CE")
     if focal:
         ax.plot(density[:len(focal)], focal, "s-", label="partial focal CE")
